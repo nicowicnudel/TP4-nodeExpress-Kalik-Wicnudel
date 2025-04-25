@@ -1,5 +1,5 @@
 import Alumno from "./models/alumno.js"
-import {restar, sumar} from "./modules/matematica.js"
+import {restar, sumar, multiplicar, dividir} from "./modules/matematica.js"
 import {OMDBSearchByPage, OMDBSearchComplete, OMDBGetByImdbID} from "./modules/omdb-wrapper.js"
 import express  from "express";
 import cors     from "cors";
@@ -16,10 +16,6 @@ app.get('/', (req, res) => {
 
 app.get('/saludar/:nombre', (req, res) => {
     res.status(200).send('Hola! ' + req.params.nombre);
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
 })
 
 app.get('/validarfecha/:ano/:mes/:dia', (req, res) => {
@@ -70,3 +66,19 @@ app.get('/matematica/multiplicar', (req, res) => {
     let multiplicacion = multiplicar(n1, n2);
     res.status(200).send("Multiplicación válida: " + multiplicacion);
 });
+
+app.get('/matematica/dividir', (req, res) => {
+    let n1 = parseFloat(req.query.n1);  // Lee el primer número (n1) desde los parámetros de la query
+    let n2 = parseFloat(req.query.n2);  // Lee el segundo número (n2) desde los parámetros de la query
+
+    if (isNaN(n1) || isNaN(n2)) {
+        return res.status(400).send("Parámetros inválidos");
+    }
+
+    let division = dividir(n1, n2);
+    res.status(200).send("Division válida: " + division);
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
