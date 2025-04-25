@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "58c79f76-086e-4edd-8640-8a46dc53209f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SALUDAR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/saludar/nico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"saludar",
+						"nico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validar fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/validarfecha/2025/08/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"validarfecha",
+						"2025",
+						"08",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validar suma",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/matematica/sumar?n1=8&n2=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matematica",
+						"sumar"
+					],
+					"query": [
+						{
+							"key": "n1",
+							"value": "8"
+						},
+						{
+							"key": "n2",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
