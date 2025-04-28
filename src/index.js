@@ -79,6 +79,22 @@ app.get('/matematica/dividir', (req, res) => {
     res.status(200).send("Division válida: " + division);
 });
 
+app.get('/omdb/searchbypage', async (req, res) => {
+    const search = req.query.search;
+    const p = req.query.p;
+
+    if (!search || !p) {
+        return res.status(400).send("Faltan parámetros 'search' o 'p'");
+    }
+
+    try {
+        const result = await OMDBSearchByPage(search, p);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).send("Error buscando en OMDB");
+    }
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
