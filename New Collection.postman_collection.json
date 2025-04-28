@@ -76,6 +76,178 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "validar resta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/matematica/restar?n1=10&n2=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matematica",
+						"restar"
+					],
+					"query": [
+						{
+							"key": "n1",
+							"value": "10"
+						},
+						{
+							"key": "n2",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validar multi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/matematica/multiplicar?n1=5&n2=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matematica",
+						"multiplicar"
+					],
+					"query": [
+						{
+							"key": "n1",
+							"value": "5"
+						},
+						{
+							"key": "n2",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validar division ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/matematica/dividir?n1=15&n2=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matematica",
+						"dividir"
+					],
+					"query": [
+						{
+							"key": "n1",
+							"value": "15"
+						},
+						{
+							"key": "n2",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "omdbsearchbypage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/omdb/searchbypage?search=cars&p=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"omdb",
+						"searchbypage"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "cars"
+						},
+						{
+							"key": "p",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "omdbsearchcomplete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/omdb/searchcomplete?search=batman",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"omdb",
+						"searchcomplete"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "batman"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "omdbgetbyimdbid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/omdb/getbyimdbid?id=tt0372783",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"omdb",
+						"getbyimdbid"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "tt0372783"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
