@@ -2,6 +2,8 @@ import axios from "axios";
 const APIKEY = "9c5167ef"; // Solo la clave, sin la URL completa
 const BASE_URL = "http://www.omdbapi.com/";
 
+
+// 1
 const OMDBSearchByPage = async (searchText, page = 1) => {
   let returnObject = {
     respuesta: false,
@@ -25,6 +27,8 @@ const OMDBSearchByPage = async (searchText, page = 1) => {
   return returnObject;
 };
 
+
+// 2
 const OMDBSearchComplete = async (searchText) => {
   let returnObject = {
     respuesta: false,
@@ -64,6 +68,8 @@ const OMDBSearchComplete = async (searchText) => {
   return returnObject;
 };
 
+
+//3
 const OMDBGetByImdbID = async (imdbID) => {
   let returnObject = {
     respuesta: false,

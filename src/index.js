@@ -33,8 +33,8 @@ app.get('/validarfecha/:ano/:mes/:dia', (req, res) => {
 })
 
 app.get('/matematica/sumar', (req, res) => {
-    let n1 = parseFloat(req.query.n1);  // Lee el primer número (n1) desde los parámetros de la query
-    let n2 = parseFloat(req.query.n2);  // Lee el segundo número (n2) desde los parámetros de la query
+    let n1 = parseFloat(req.query.n1);  
+    let n2 = parseFloat(req.query.n2);  
 
     if (isNaN(n1) || isNaN(n2)) {
         return res.status(400).send("Parámetros inválidos");
@@ -44,8 +44,8 @@ app.get('/matematica/sumar', (req, res) => {
 });
 
 app.get('/matematica/restar', (req, res) => {
-    let n1 = parseFloat(req.query.n1);  // Lee el primer número (n1) desde los parámetros de la query
-    let n2 = parseFloat(req.query.n2);  // Lee el segundo número (n2) desde los parámetros de la query
+    let n1 = parseFloat(req.query.n1);  
+    let n2 = parseFloat(req.query.n2); 
 
     if (isNaN(n1) || isNaN(n2)) {
         return res.status(400).send("Parámetros inválidos");
@@ -56,8 +56,8 @@ app.get('/matematica/restar', (req, res) => {
 });
 
 app.get('/matematica/multiplicar', (req, res) => {
-    let n1 = parseFloat(req.query.n1);  // Lee el primer número (n1) desde los parámetros de la query
-    let n2 = parseFloat(req.query.n2);  // Lee el segundo número (n2) desde los parámetros de la query
+    let n1 = parseFloat(req.query.n1);  
+    let n2 = parseFloat(req.query.n2); 
 
     if (isNaN(n1) || isNaN(n2)) {
         return res.status(400).send("Parámetros inválidos");
@@ -68,8 +68,8 @@ app.get('/matematica/multiplicar', (req, res) => {
 });
 
 app.get('/matematica/dividir', (req, res) => {
-    let n1 = parseFloat(req.query.n1);  // Lee el primer número (n1) desde los parámetros de la query
-    let n2 = parseFloat(req.query.n2);  // Lee el segundo número (n2) desde los parámetros de la query
+    let n1 = parseFloat(req.query.n1);  
+    let n2 = parseFloat(req.query.n2); 
 
     if (isNaN(n1) || isNaN(n2)) {
         return res.status(400).send("Parámetros inválidos");
