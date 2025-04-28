@@ -88,7 +88,6 @@ const OMDBGetByImdbID = async (imdbID) => {
   } catch (error) {
     console.error("Error en OMDBGetByImdbID:", error);
   }
-
   return returnObject;
 };
 

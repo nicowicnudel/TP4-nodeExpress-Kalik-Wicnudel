@@ -95,6 +95,16 @@ app.get('/omdb/searchbypage', async (req, res) => {
     }
 });
 
+app.get("/omdb/searchcomplete", async (req, res) => {
+    const { search } = req.query;
+    try {
+        const resultado = await OMDBSearchComplete(search);
+        res.status(200).json(resultado);
+    } catch (error) {
+        res.status(500).send("Error en búsqueda completa");
+    }
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
