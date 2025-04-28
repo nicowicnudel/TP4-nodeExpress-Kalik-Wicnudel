@@ -105,6 +105,16 @@ app.get("/omdb/searchcomplete", async (req, res) => {
     }
 });
 
+app.get("/omdb/getbyimdbid", async (req, res) => {
+    const { id } = req.query;
+    try {
+        const resultado = await OMDBGetByImdbID(id);
+        res.status(200).json(resultado);
+    } catch (error) {
+        res.status(500).send("Error en búsqueda por ID");
+    }
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
