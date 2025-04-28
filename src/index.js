@@ -146,6 +146,27 @@ app.post('/alumnos', (req, res) => {
     res.status(201).json(nuevoAlumno);
   });
 
+  app.delete('/alumnos', (req, res) => {
+    const { dni } = req.body;
+
+    if (!dni) {
+      return res
+        .status(400)
+        .json({ error: 'Debes enviar { "dni": "..." } en el body' });
+    }
+    const idx = alumnosArray.findIndex(al => al.dni === dni);
+    if (idx === -1) {
+      return res
+        .status(404)
+        .json({ error: 'Alumno no encontrado' });
+    }
+    alumnosArray.splice(idx, 1);
+    res
+      .status(200)
+      .json({ message: 'Alumno eliminado correctamente' });
+
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+});
