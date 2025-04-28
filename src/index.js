@@ -1,4 +1,4 @@
-import Alumno from "./models/alumno.js"
+import {Alumno} from "./models/alumno.js"
 import {restar, sumar, multiplicar, dividir} from "./modules/matematica.js"
 import {OMDBSearchByPage, OMDBSearchComplete, OMDBGetByImdbID} from "./modules/omdb-wrapper.js"
 import express  from "express";
@@ -112,6 +112,25 @@ app.get("/omdb/getbyimdbid", async (req, res) => {
         res.status(200).json(resultado);
     } catch (error) {
         res.status(500).send("Error en búsqueda por ID");
+    }
+});
+
+const alumnosArray = [];
+alumnosArray.push(new Alumno("Esteban Quito", "22888444", 20));
+alumnosArray.push(new Alumno("Matias Tuto", "28946255", 51));
+alumnosArray.push(new Alumno("Elba Lazo", "32623391", 18));
+
+app.get("/alumnos", (req, res) => {
+    res.status(200).json(alumnosArray);
+});
+
+app.get("/alumnos/:dni", (req, res) => {
+    const { dni } = req.params; 
+    const alumno = alumnosArray.find(a => a.dni === dni); 
+    if (alumno) {
+        res.status(200).json(alumno); 
+    } else {
+        res.status(404).send('Alumno no encontrado');
     }
 });
 
