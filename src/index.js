@@ -134,6 +134,18 @@ app.get("/alumnos/:dni", (req, res) => {
     }
 });
 
+app.post('/alumnos', (req, res) => {
+    const { username, dni, edad } = req.body;
+  
+    if (!username || !dni || !edad) {
+      return res.status(400).json({ error: 'Faltan datos del alumno' });
+    }
+    const nuevoAlumno = new Alumno(username, dni, edad);
+    alumnosArray.push(nuevoAlumno);
+  
+    res.status(201).json(nuevoAlumno);
+  });
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
